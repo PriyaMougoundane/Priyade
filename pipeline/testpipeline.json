@@ -50,13 +50,19 @@
 				"inputs": [
 					{
 						"referenceName": "nfile1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "SalesLTProduct.txt"
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "nfile1o",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filedir": "output2/txt"
+						}
 					}
 				]
 			}
