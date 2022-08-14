@@ -61,7 +61,7 @@
 						"referenceName": "nfile1o",
 						"type": "DatasetReference",
 						"parameters": {
-							"filedir": "output2/txt"
+							"filedir1": "output2/txt"
 						}
 					}
 				]
