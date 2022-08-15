@@ -102,7 +102,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"filename": {
-											"value": "@endswith('@item().name','.csv' )",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
@@ -166,7 +166,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"filename2": {
-											"value": "@endswith('@item().name','.txt')",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
