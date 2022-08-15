@@ -102,7 +102,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"filename": {
-											"value": "@item().name",
+											"value": "@endswith('@item().name','csv')",
 											"type": "Expression"
 										}
 									}
