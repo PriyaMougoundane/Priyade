@@ -68,7 +68,6 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"recursive": true,
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -183,6 +182,16 @@
 				}
 			}
 		],
+		"parameters": {
+			"filename1": {
+				"type": "string",
+				"defaultValue": ".csv"
+			},
+			"filename2": {
+				"type": "string",
+				"defaultValue": ".txt"
+			}
+		},
 		"annotations": []
 	}
 }
