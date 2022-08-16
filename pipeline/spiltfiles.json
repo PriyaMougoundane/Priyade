@@ -16,10 +16,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "input11",
-						"type": "DatasetReference"
-					},
 					"fieldList": [
 						"childItems"
 					],
@@ -139,28 +135,8 @@
 										"fileExtension": ".txt"
 									}
 								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "file11",
-									"type": "DatasetReference"
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "outtxt",
-									"type": "DatasetReference"
-								}
-							]
+								"enableStaging": false
+							}
 						}
 					],
 					"ifTrueActivities": [
@@ -200,28 +176,8 @@
 										"fileExtension": ".txt"
 									}
 								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "file111",
-									"type": "DatasetReference"
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "file112",
-									"type": "DatasetReference"
-								}
-							]
+								"enableStaging": false
+							}
 						}
 					]
 				}
