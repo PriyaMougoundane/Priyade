@@ -1,25 +1,16 @@
 {
-	"name": "metafile",
+	"name": "metafileoutput",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
-		},
-		"parameters": {
-			"filename": {
-				"type": "string"
-			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@dataset().filename",
-					"type": "Expression"
-				},
-				"folderPath": "input2",
+				"folderPath": "output2/csv",
 				"fileSystem": "datengineeringcontainer1"
 			},
 			"columnDelimiter": ",",

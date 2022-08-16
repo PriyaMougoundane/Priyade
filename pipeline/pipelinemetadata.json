@@ -68,69 +68,6 @@
 									"type": "DelimitedTextSource",
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
-										"enablePartitionDiscovery": false
-									},
-									"formatSettings": {
-										"type": "DelimitedTextReadSettings"
-									}
-								},
-								"sink": {
-									"type": "DelimitedTextSink",
-									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
-									},
-									"formatSettings": {
-										"type": "DelimitedTextWriteSettings",
-										"quoteAllText": true,
-										"fileExtension": ".txt"
-									}
-								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "metinputfile",
-									"type": "DatasetReference",
-									"parameters": {
-										"filename": {
-											"value": "@endswith('@item().name','csv')",
-											"type": "Expression"
-										}
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "ofilecsv",
-									"type": "DatasetReference"
-								}
-							]
-						},
-						{
-							"name": "Copy data2",
-							"type": "Copy",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "7.00:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"source": {
-									"type": "DelimitedTextSource",
-									"storeSettings": {
-										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
 										"enablePartitionDiscovery": false
 									},
@@ -161,11 +98,11 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "metaifile",
+									"referenceName": "metafile",
 									"type": "DatasetReference",
 									"parameters": {
-										"filename2": {
-											"value": "@item().name",
+										"filename": {
+											"value": "@endswith(item().itemName,'.csv')",
 											"type": "Expression"
 										}
 									}
@@ -173,8 +110,47 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "metstxtfile",
+									"referenceName": "metafileoutput",
 									"type": "DatasetReference"
+								}
+							]
+						},
+						{
+							"name": "Copy data2",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "metafile",
+									"type": "DatasetReference",
+									"parameters": {
+										"filename": {
+											"value": "@endswith(item().itemName,'.txt')",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
@@ -183,11 +159,11 @@
 			}
 		],
 		"parameters": {
-			"filename1": {
+			"filecsv": {
 				"type": "string",
 				"defaultValue": ".csv"
 			},
-			"filename2": {
+			"filetxt": {
 				"type": "string",
 				"defaultValue": ".txt"
 			}
