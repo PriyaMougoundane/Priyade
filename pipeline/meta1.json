@@ -17,7 +17,13 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "metaf1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"": {
+								"value": "@pipeline().parameters.filename",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [
 						"childItems"
@@ -32,6 +38,11 @@
 				}
 			}
 		],
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
