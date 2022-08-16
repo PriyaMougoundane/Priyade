@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@endswith(activity('Get Metadata1').output.itemName,'.csv')",
+						"value": "@endswith(activity('Get Metadata1').output.itemName,'.txt')",
 						"type": "Expression"
 					},
 					"ifTrueActivities": [
@@ -67,6 +67,7 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
+										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
