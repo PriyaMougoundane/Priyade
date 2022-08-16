@@ -45,7 +45,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@endswith(activity('Get Metadata1').output.itemName,'.txt')",
+						"value": "@endswith(activity('Get Metadata1').output.itemName,'txt')",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
