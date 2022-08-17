@@ -58,7 +58,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@contains(item().output,pipeline().parameters.csvfile)",
+									"value": "@contains(item().itemName,pipeline().parameters.csvfile)",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
